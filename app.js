@@ -230,7 +230,7 @@ searchArea.keypress(function(event){
 		
 		console.log("enter");
 		var searchString=searchArea.val();
-		var urlSearch="https://newsapi.org/v2/everything?q="+searchString+"&from=2018-01-01&sortBy=popularity&pageSize=10&language=en&apiKey=9ba3d0f7d9474cbd99e846d8cebb3e16"
+		var urlSearch="https://newsapi.org/v2/everything?q="+searchString+"&sortBy=popularity&pageSize=10&language=en&apiKey=9ba3d0f7d9474cbd99e846d8cebb3e16"
 		console.log(urlSearch);
 	
 
