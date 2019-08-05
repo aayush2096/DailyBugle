@@ -32,8 +32,7 @@ cards=Array.from(document.getElementsByClassName("head_slides"));
 titles=Array.from(document.getElementsByClassName("title_slides"));
 
 
-console.log("cards="+cards);
-console.log("titles="+titles);
+
 
 
 
@@ -75,7 +74,7 @@ function start_interval(){
 		$(cards[2]).css("background-image","url("+linkArr[imgNo+1].urlToImage+")");
 		}
 		
-		console.log("count="+count+"imgNo="+imgNo);
+		
 		nextSlide();
 	
 
@@ -91,9 +90,7 @@ function start_interval(){
 country_code_select=window.sessionStorage.getItem("cc");
 index=window.sessionStorage.getItem("si");
 
-console.log(country_code_select);
 
-console.log(index);
 
 
 
@@ -108,12 +105,12 @@ else
 url="https://newsapi.org/v2/top-headlines?country="+country_code_select+"&apiKey=9ba3d0f7d9474cbd99e846d8cebb3e16"
 
 
-console.log("url="+url);
+
 
 $.get(url,function(response){
 
 linkArr=Array.from(response.articles);
-console.log("linkArr="+linkArr);
+
 start_interval();
 
 });
@@ -134,9 +131,6 @@ index=document.getElementById("country_select").selectedIndex;
 window.sessionStorage.setItem("cc",country_code_select);
 window.sessionStorage.setItem("si",index);
 
-console.log(window.sessionStorage.getItem("cc"));
-
-console.log(window.sessionStorage.getItem("si"));
 
 
 location.reload();
@@ -228,16 +222,16 @@ searchArea.keypress(function(event){
 
 		$("#result_list").empty();
 		
-		console.log("enter");
+		
 		var searchString=searchArea.val();
 		var urlSearch="https://newsapi.org/v2/everything?q="+searchString+"&sortBy=popularity&pageSize=10&language=en&apiKey=9ba3d0f7d9474cbd99e846d8cebb3e16"
-		console.log(urlSearch);
+		
 	
 
 					$.get(urlSearch,function(response){
 
 							searchResultArray=Array.from(response.articles);
-							console.log("this is"+searchResultArray);
+							
 						showResult();
 
 
@@ -258,7 +252,7 @@ function showResult()
 	{
 				
 		var article=searchResultArray[i];
-		console.log(article.urlToImage);
+		
 
 		var imgSource=article.urlToImage;
 		var urlToNews=article.url;
